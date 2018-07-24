@@ -17,8 +17,11 @@ Set-up
 
        sudo pip install Pygments
 
- - Copy .lessfilter file to you home directory
- - Add the following to your .bashrc file
+ - Link .lessfilter file to your home directory
+
+       ln -s $(pwd)/.lessfilter ~/.lessfilter
+
+ - Add the following to your .bashrc or .zshrc file
 
        ############### for less syntax highlight ###############
        # specify options that will be passed to less
@@ -34,3 +37,6 @@ Set-up
 Additional information
 -------------
 You can change tokenizer and/or colors on the fly by editing \_\_init__.py file
+You can use pygmentize log colorizer for other tools within shell. Main command to work with is
+
+       pygmentize -f 256 -l loglexer -O style=logstyle -x my_file_name.log
