@@ -1,6 +1,6 @@
 #!/bin/sh
 case "$1" in
-    eazybi-web*.log|eazybi-web*.log.*|eazybi-child*.log|eazybi-child*.log.*)
+    *eazybi-web*.log|*eazybi-web*.log.*|*eazybi-child*.log|*eazybi-child*.log.*|*development.log|*production.log)
 	    pygmentize -f 256 -l loglexer -O style=logstyle -x "$1";;
     *.xml|*.diff|*.py|*.rb|*.sql)
         pygmentize -f 256 -x "$1";;
